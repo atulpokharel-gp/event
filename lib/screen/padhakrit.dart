@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Sampada extends StatelessWidget {
-  const Sampada({super.key});
+class Padhakrit extends StatelessWidget {
+  const Padhakrit({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +26,10 @@ class Sampada extends StatelessWidget {
             ),
           ],
         ));
+  }
+
+  void printlogdata() {
+    debugPrint("pressed");
   }
 }
 
