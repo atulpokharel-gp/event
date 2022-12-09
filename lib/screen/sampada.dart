@@ -6,64 +6,15 @@ class Sampada extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
-        body: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
-                HomeMenuCard(
-                  title: "log",
-                  imageName: "news.png",
-                  index: 0,
-                ),
-                HomeMenuCard(
-                  title: "log2",
-                  imageName: "profile.png",
-                  index: 1,
-                ),
-              ],
-            ),
-          ],
-        ));
-  }
-}
-
-class HomeMenuCard extends StatelessWidget {
-  final String title;
-  final String imageName;
-  final int index;
-  const HomeMenuCard(
-      {Key? key, required this.title, required this.imageName, this.index = 0})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        if (index == 0) {
-          test();
-        } else {
-          debugPrint("not index zero");
-        }
-      },
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        color: Colors.orange,
-        child: Column(
-          children: [
-            Image.asset(
-              'assets/images/$imageName',
-              height: 100,
-            ),
-            Text(title)
-          ],
+      appBar: AppBar(),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/03.jpg'),
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
-  }
-
-  void test() {
-    debugPrint("hello");
   }
 }

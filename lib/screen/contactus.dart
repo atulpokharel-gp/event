@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'map.dart';
+
 class Contactus extends StatefulWidget {
   const Contactus({super.key});
 
@@ -38,6 +40,10 @@ Future sentEmail() async {
     }),
   );
   return response.statusCode;
+
+  //  cif (response.statusCode == 200) {
+  //   debugPrint("i am responding");
+  // }
 }
 
 class _ContactusState extends State<Contactus> {
@@ -102,7 +108,8 @@ class _ContactusState extends State<Contactus> {
                 child: const Text(
                   "send",
                   style: TextStyle(fontSize: 20),
-                ))
+                )),
+            const SizedBox(height: 30, child: gMape())
           ],
         )),
       ),
