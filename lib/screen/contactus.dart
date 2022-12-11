@@ -1,9 +1,9 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
-import 'map.dart';
 
 class Contactus extends StatefulWidget {
   const Contactus({super.key});
@@ -36,83 +36,92 @@ Future sentEmail() async {
         "name": nameController.text,
         "subject": subjectController.text,
         "user_email": emailController.text,
+        "message": messageController,
       }
     }),
   );
-  return response.statusCode;
+  return debugPrint("${response.statusCode}");
+}
 
-  //  cif (response.statusCode == 200) {
-  //   debugPrint("i am responding");
-  // }
+void dispose() {
+  nameController.dispose();
+  subjectController.dispose();
+  emailController.dispose();
+  messageController.dispose();
 }
 
 class _ContactusState extends State<Contactus> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(25, 0, 40, 25),
-        child: Form(
-            child: Column(
-          children: [
-            TextFormField(
-              controller: nameController,
-              decoration: const InputDecoration(
-                icon: Icon(Icons.account_circle),
-                hintText: 'Name',
-                labelText: 'Name',
+      // body: padding(
+      //   Padding: const EdgeInsets.all(8.0),
+
+      body: Column(
+        children: [
+          Form(
+            child: Column(children: [
+              Scrollbar(
+                child: Column(
+                  children: [
+                    TextFormField(
+                      controller: nameController,
+                      decoration: const InputDecoration(
+                        errorBorder: null,
+                        icon: Icon(Icons.account_circle),
+                        hintText: 'Name',
+                        labelText: 'Name',
+                      ),
+                    ),
+
+                    TextFormField(
+                      controller: subjectController,
+                      decoration: const InputDecoration(
+                        icon: Icon(Icons.subject_rounded),
+                        hintText: 'Subject',
+                        labelText: 'Subject',
+                      ),
+                    ),
+
+                    TextFormField(
+                      controller: emailController,
+                      decoration: const InputDecoration(
+                        icon: Icon(Icons.email),
+                        hintText: 'email',
+                        labelText: 'email',
+                      ),
+                    ),
+
+                    TextFormField(
+                      controller: messageController,
+                      decoration: const InputDecoration(
+                        icon: Icon(Icons.message_rounded),
+                        hintText: 'Message',
+                        labelText: 'Message',
+                      ),
+                    ),
+                    // const SizedBox(
+                    //   height: 15,
+                    // ),
+
+                    // ignore: unnecessary_const
+                  ],
+                  //   ),
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 25,
-            ),
-            TextFormField(
-              controller: subjectController,
-              decoration: const InputDecoration(
-                icon: Icon(Icons.subject_rounded),
-                hintText: 'Subject',
-                labelText: 'Subject',
-              ),
-            ),
-            const SizedBox(
-              height: 25,
-            ),
-            TextFormField(
-              controller: emailController,
-              decoration: const InputDecoration(
-                icon: Icon(Icons.email),
-                hintText: 'email',
-                labelText: 'email',
-              ),
-            ),
-            const SizedBox(
-              height: 25,
-            ),
-            TextFormField(
-              controller: messageController,
-              decoration: const InputDecoration(
-                icon: Icon(Icons.message_rounded),
-                hintText: 'Message',
-                labelText: 'Message',
-              ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            ElevatedButton(
-                onPressed: (() {
-                  sentEmail();
-                  debugPrint(
-                      "iamrunning $emailController ,$messageController,$nameController,$subjectController");
-                }),
-                child: const Text(
-                  "send",
-                  style: TextStyle(fontSize: 20),
-                )),
-            const SizedBox(height: 30, child: gMape())
-          ],
-        )),
+              ElevatedButton(
+                  onPressed: (() {
+                    sentEmail();
+                  }),
+                  child: const Text(
+                    "send",
+                    style: TextStyle(fontSize: 20),
+                  )),
+            ]),
+          ),
+        ],
       ),
+      // ),
     );
   }
 }

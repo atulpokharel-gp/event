@@ -1,5 +1,5 @@
+import 'package:event/screen/MapSample.dart';
 import 'package:event/screen/contactus.dart';
-import 'package:event/screen/map.dart';
 import 'package:flutter/material.dart';
 
 class Contact extends StatelessWidget {
@@ -25,7 +25,36 @@ class Contact extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: const Contactus(),
+        child: Column(
+          children: [
+            Column(
+              // verticalDirection: true,
+              children: [
+                Column(
+                  children: [
+                    SizedBox(
+                        // ignore: sort_child_properties_last
+                        height: MediaQuery.of(context).size.height * 0.25,
+                        width: double.infinity,
+                        child: const Image(
+                          image: AssetImage('assets/images/message.jpg'),
+                        )),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.25,
+                      width: double.infinity,
+                      child: const MapSample(),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.02,
+                      width: double.infinity,
+                      child: const Contactus(),
+                    )
+                  ],
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

@@ -29,32 +29,33 @@ class _RootPageState extends State<RootPage> {
   int currentPage = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      // appBar: AppBar(
-      //     title: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-      //   Center(
-      //     child: Image.asset(
-      //       'assets/images/logo.png',
-      //       height: 100,
-      //     ),
-      //   ),
-      // ])),
-      body: const HomePage(),
+    return const HomePage();
+    // return Scaffold(
+    //   appBar: AppBar(),
+    //   // appBar: AppBar(
+    //   //     title: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+    //   //   Center(
+    //   //     child: Image.asset(
+    //   //       'assets/images/logo.png',
+    //   //       height: 100,
+    //   //     ),
+    //   //   ),
+    //   // ])),
+    //   body: const HomePage(),
 
-      // bottomNavigationBar: NavigationBar(
-      //   backgroundColor: Colors.blueAccent,
-      //   destinations: const [
-      //     NavigationDestination(icon: Icon(Icons.home), label: "Home"),
-      //     NavigationDestination(icon: Icon(Icons.house), label: "Profile"),
-      //   ],
-      //   onDestinationSelected: (int index) {
-      //     setState(() {
-      //       currentPage = index;
-      //     });
-      //   },
-      //   selectedIndex: currentPage,
-      // ),
-    );
+    //   // bottomNavigationBar: NavigationBar(
+    //   //   backgroundColor: Colors.blueAccent,
+    //   //   destinations: const [
+    //   //     NavigationDestination(icon: Icon(Icons.home), label: "Home"),
+    //   //     NavigationDestination(icon: Icon(Icons.house), label: "Profile"),
+    //   //   ],
+    //   //   onDestinationSelected: (int index) {
+    //   //     setState(() {
+    //   //       currentPage = index;
+    //   //     });
+    //   //   },
+    //   //   selectedIndex: currentPage,
+    //   // ),
+    // );
   }
 }

@@ -1,4 +1,7 @@
+import 'package:event/data/home_data.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/NewsContainer.dart';
 
 class News extends StatelessWidget {
   const News({super.key});
@@ -6,68 +9,17 @@ class News extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
-        body: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
-                HomeMenuCard(
-                  title: "log",
-                  imageName: "news.png",
-                  index: 0,
-                ),
-                HomeMenuCard(
-                  title: "log2",
-                  imageName: "profile.png",
-                  index: 1,
-                ),
-              ],
-            ),
-          ],
-        ));
-  }
-
-  void printlogdata() {
-    debugPrint("pressed");
-  }
-}
-
-class HomeMenuCard extends StatelessWidget {
-  final String title;
-  final String imageName;
-  final int index;
-  const HomeMenuCard(
-      {Key? key, required this.title, required this.imageName, this.index = 0})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        if (index == 0) {
-          test();
-        } else {
-          debugPrint("not index zero");
-        }
-      },
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        color: Colors.orange,
-        child: Column(
-          children: [
-            Image.asset(
-              'assets/images/$imageName',
-              height: 100,
-            ),
-            Text(title)
-          ],
+        appBar: AppBar(
+          title: const Text('News'),
+          centerTitle: true,
         ),
-      ),
-    );
-  }
-
-  void test() {
-    debugPrint("hello");
+        body: ListView.builder(
+            itemCount: mydata.length,
+            itemBuilder: (context, index) {
+              return NewScreen(
+                imageurl: mydata[index]['image'],
+                title: mydata[index]['title'],
+              );
+            }));
   }
 }

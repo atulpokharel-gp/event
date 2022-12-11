@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
                   children: (const [
                     HomeMenuCard(
                       title: "गृहपृष्ठ",
-                      imageName: 'homeu.png',
+                      imageName: 'home.png',
                       index: 0,
                     ),
                     HomeMenuCard(
@@ -177,13 +177,13 @@ class HomeMenuCard extends StatelessWidget {
       },
       child: Container(
         padding: const EdgeInsets.all(5),
-        color: Color.fromARGB(255, 54, 155, 238),
+        color: const Color.fromARGB(255, 54, 155, 238),
         child: Column(
           children: [
             Image.asset(
               'assets/images/$imageName',
               fit: BoxFit.contain,
-              height: 80,
+              height: 93,
               width: 180,
             ),
             Text(title)
