@@ -13,22 +13,16 @@ class Contact extends StatelessWidget {
         Center(
           child: Image.asset(
             'assets/images/appbanner.jpg',
-            height: 100,
+            // height: 100,
             fit: BoxFit.fitWidth,
           ),
         ),
       ])),
+      // ignore: avoid_unnecessary_containers
       body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/blueg.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
         child: Column(
           children: [
             Column(
-              // verticalDirection: true,
               children: [
                 Column(
                   children: [
@@ -45,7 +39,7 @@ class Contact extends StatelessWidget {
                       child: const MapSample(),
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.02,
+                      height: MediaQuery.of(context).size.height * 0.8,
                       width: double.infinity,
                       child: const Contactus(),
                     )

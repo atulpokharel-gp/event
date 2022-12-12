@@ -41,6 +41,9 @@ dependencies:
   footer: ^0.0.4
   http: ^0.13.5
   google_maps_flutter: ^2.2.1
+  webview_flutter: ^3.0.4
+  syncfusion_flutter_pdf: ^20.3.60
+  syncfusion_flutter_pdfviewer: ^20.3.59
  
   
 

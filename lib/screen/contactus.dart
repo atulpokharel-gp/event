@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_typing_uninitialized_variables
-
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -12,12 +10,12 @@ class Contactus extends StatefulWidget {
   State<Contactus> createState() => _ContactusState();
 }
 
-final nameController = TextEditingController();
-final subjectController = TextEditingController();
-final emailController = TextEditingController();
-final messageController = TextEditingController();
+const nameController = 'atulpokharel10@gmail.com';
+const subjectController = 'atulpokharel10@gmail.com';
+const emailController = 'atulpokharel10@gmail.com';
+const messageController = 'atulpokharel10@gmail.com';
 
-Future sentEmail() async {
+Future<int> sentEmail() async {
   final url = Uri.parse("https://api.emailjs.com/api/v1.0/email/send");
   const serviceId = "service_hqry3xl";
   const templateId = "template_5d13pve";
@@ -33,95 +31,90 @@ Future sentEmail() async {
       "template_id": templateId,
       "user_id": userId,
       "template_params": {
-        "name": nameController.text,
-        "subject": subjectController.text,
-        "user_email": emailController.text,
+        "name": nameController,
+        "subject": subjectController,
+        "user_email": emailController,
         "message": messageController,
       }
     }),
   );
-  return debugPrint("${response.statusCode}");
-}
-
-void dispose() {
-  nameController.dispose();
-  subjectController.dispose();
-  emailController.dispose();
-  messageController.dispose();
+  return response.statusCode;
 }
 
 class _ContactusState extends State<Contactus> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: padding(
-      //   Padding: const EdgeInsets.all(8.0),
-
       body: Column(
         children: [
-          Form(
-            child: Column(children: [
-              Scrollbar(
-                child: Column(
-                  children: [
-                    TextFormField(
-                      controller: nameController,
-                      decoration: const InputDecoration(
-                        errorBorder: null,
-                        icon: Icon(Icons.account_circle),
-                        hintText: 'Name',
-                        labelText: 'Name',
-                      ),
-                    ),
+          ElevatedButton(
+            onPressed: (() {
+              sentEmail();
 
-                    TextFormField(
-                      controller: subjectController,
-                      decoration: const InputDecoration(
-                        icon: Icon(Icons.subject_rounded),
-                        hintText: 'Subject',
-                        labelText: 'Subject',
-                      ),
-                    ),
-
-                    TextFormField(
-                      controller: emailController,
-                      decoration: const InputDecoration(
-                        icon: Icon(Icons.email),
-                        hintText: 'email',
-                        labelText: 'email',
-                      ),
-                    ),
-
-                    TextFormField(
-                      controller: messageController,
-                      decoration: const InputDecoration(
-                        icon: Icon(Icons.message_rounded),
-                        hintText: 'Message',
-                        labelText: 'Message',
-                      ),
-                    ),
-                    // const SizedBox(
-                    //   height: 15,
-                    // ),
-
-                    // ignore: unnecessary_const
-                  ],
-                  //   ),
-                ),
-              ),
-              ElevatedButton(
-                  onPressed: (() {
-                    sentEmail();
-                  }),
-                  child: const Text(
-                    "send",
-                    style: TextStyle(fontSize: 20),
-                  )),
-            ]),
-          ),
+              debugPrint(json.encode({
+                "template_params": {
+                  "name": nameController,
+                  "subject": subjectController,
+                  "user_email": emailController,
+                  "message": messageController,
+                }
+              }).toString());
+            }),
+            child: null,
+          )
         ],
       ),
-      // ),
     );
+    //   body: Padding(
+    //     padding: const EdgeInsets.fromLTRB(25, 0, 40, 25),
+    //     child: Form(
+    //         child: Column(
+    //       children: [
+    //         TextFormField(
+    //           controller: nameController,
+    //           decoration: const InputDecoration(
+    //             icon: Icon(Icons.account_circle),
+    //             hintText: 'Name',
+    //             labelText: 'Name',
+    //           ),
+    //         ),
+    //         TextFormField(
+    //           controller: subjectController,
+    //           decoration: const InputDecoration(
+    //             icon: Icon(Icons.subject_rounded),
+    //             hintText: 'Subject',
+    //             labelText: 'Subject',
+    //           ),
+    //         ),
+    //         TextFormField(
+    //           controller: emailController,
+    //           decoration: const InputDecoration(
+    //             icon: Icon(Icons.email),
+    //             hintText: 'email',
+    //             labelText: 'email',
+    //           ),
+    //         ),
+    //         TextFormField(
+    //           controller: messageController,
+    //           decoration: const InputDecoration(
+    //             icon: Icon(Icons.message_rounded),
+    //             hintText: 'Message',
+    //             labelText: 'Message',
+    //           ),
+    //         ),
+    //         ElevatedButton(
+    //             onPressed: (() {
+    //               sentEmail();
+    //               debugPrint(
+    //                   "iamrunning $emailController ,$messageController,$nameController,$subjectController");
+    //             }),
+    //             child: const Text(
+    //               "send",
+    //               style: TextStyle(fontSize: 20),
+    //             )),
+    //       ],
+    //     )),
+    //   ),
+    // );
   }
 }

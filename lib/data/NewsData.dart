@@ -1,6 +1,7 @@
+// ignore: file_names
 const mydata = [
   {
-    'title': 'National',
+    'title': 'top-headlines',
     'image':
         'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Pokhara2.jpg/220px-Pokhara2.jpg'
   },

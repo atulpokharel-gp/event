@@ -1,10 +1,11 @@
-import 'package:event/data/home_data.dart';
 import 'package:flutter/material.dart';
+import '../data/NewsData.dart';
+// ignore: unused_import
+import '../widgets/news_container.dart';
+import '../widgets/newslist_container.dart';
 
-import '../widgets/NewsContainer.dart';
-
-class News extends StatelessWidget {
-  const News({super.key});
+class NewsScreen extends StatelessWidget {
+  const NewsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class News extends StatelessWidget {
         body: ListView.builder(
             itemCount: mydata.length,
             itemBuilder: (context, index) {
-              return NewScreen(
+              return NewsListContainer(
                 imageurl: mydata[index]['image'],
                 title: mydata[index]['title'],
               );

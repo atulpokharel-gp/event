@@ -1,73 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
 
+  final String url =
+      'https://ward06.lalitpurmun.gov.np/%e0%a4%b9%e0%a4%be%e0%a4%ae%e0%a5%8d%e0%a4%b0%e0%a5%8b-%e0%a4%ac%e0%a4%be%e0%a4%b0%e0%a5%87%e0%a4%ae%e0%a4%be/';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
-        body: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
-                HomeMenuCard(
-                  title: "log",
-                  imageName: "news.png",
-                  index: 0,
-                ),
-                HomeMenuCard(
-                  title: "log2",
-                  imageName: "profile.png",
-                  index: 1,
-                ),
-              ],
-            ),
-          ],
-        ));
-  }
-
-  void printlogdata() {
-    debugPrint("pressed");
-  }
-}
-
-class HomeMenuCard extends StatelessWidget {
-  final String title;
-  final String imageName;
-  final int index;
-  const HomeMenuCard(
-      {Key? key, required this.title, required this.imageName, this.index = 0})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        if (index == 0) {
-          test();
-        } else {
-          debugPrint("not index zero");
-        }
-      },
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        color: Colors.orange,
-        child: Column(
-          children: [
-            Image.asset(
-              'assets/images/$imageName',
-              height: 100,
-            ),
-            Text(title)
-          ],
-        ),
+      appBar: AppBar(
+        title: const Text("प्रोफाइल"),
+      ),
+      body: WebView(
+        initialUrl: url,
+        javascriptMode: JavascriptMode.unrestricted,
       ),
     );
-  }
-
-  void test() {
-    debugPrint("hello");
   }
 }
