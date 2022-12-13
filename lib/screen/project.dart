@@ -1,73 +1,23 @@
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+
 import 'package:flutter/material.dart';
 
 class Project extends StatelessWidget {
   const Project({super.key});
 
+  final String url =
+      'https://ward06.lalitpurmun.gov.np/storage/2022/09/%E0%A4%A6%E0%A4%BF%E0%A4%B0%E0%A5%8D%E0%A4%98%E0%A4%95%E0%A4%BE%E0%A4%B2%E0%A4%BF%E0%A4%A8-%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%A8%E0%A5%80%E0%A4%A4%E0%A4%BF-%E0%A4%A4%E0%A4%B0%E0%A5%8D%E0%A4%9C%E0%A5%81%E0%A4%AE%E0%A4%BE-%E0%A4%B8%E0%A4%AE%E0%A5%8D%E0%A4%AC%E0%A4%A8%E0%A5%8D%E0%A4%A7%E0%A4%BF-%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BF%E0%A4%B5%E0%A5%87%E0%A4%A6%E0%A4%A8-%E0%A4%B5%E0%A4%A1%E0%A4%BE-%E0%A4%A8%E0%A4%82-%E0%A5%AC.pdf';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
-        body: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
-                HomeMenuCard(
-                  title: "log",
-                  imageName: "news.png",
-                  index: 0,
-                ),
-                HomeMenuCard(
-                  title: "log2",
-                  imageName: "profile.png",
-                  index: 1,
-                ),
-              ],
-            ),
-          ],
-        ));
-  }
-
-  void printlogdata() {
-    debugPrint("pressed");
-  }
-}
-
-class HomeMenuCard extends StatelessWidget {
-  final String title;
-  final String imageName;
-  final int index;
-  const HomeMenuCard(
-      {Key? key, required this.title, required this.imageName, this.index = 0})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        if (index == 0) {
-          test();
-        } else {
-          debugPrint("not index zero");
-        }
-      },
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        color: Colors.orange,
-        child: Column(
-          children: [
-            Image.asset(
-              'assets/images/$imageName',
-              height: 100,
-            ),
-            Text(title)
-          ],
-        ),
+      appBar: AppBar(
+        title: const Text('बार्षिक योजना'),
+        centerTitle: true,
       ),
+      body:
+          // ignore: avoid_unnecessary_containers
+          Container(child: SfPdfViewer.network(url)),
     );
-  }
-
-  void test() {
-    debugPrint("hello");
   }
 }

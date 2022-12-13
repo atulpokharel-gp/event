@@ -4,12 +4,12 @@ import 'package:event/screen/padhakrit.dart';
 import 'package:event/screen/project.dart';
 import 'package:event/screen/profile.dart';
 import 'package:event/screen/news.dart';
-import 'package:event/screen/localTax.dart';
+import 'package:event/screen/LocalTax.dart';
 import 'package:event/screen/contact.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/newslist_container.dart';
-import 'news_home.dart';
+// import '../widgets/newslist_container.dart';
+// import 'news_home.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/blueg.png'),
+            image: AssetImage('assets/images/bg.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -116,6 +116,7 @@ class HomePage extends StatelessWidget {
     return const Text(
       "2022 @ishanitechnology ",
       textAlign: TextAlign.center,
+      style: TextStyle(fontSize: 20, color: Colors.white),
     );
   }
 }
@@ -134,6 +135,7 @@ class background extends StatelessWidget {
       child: Image.asset(
         'assets/images/logo.png',
         fit: BoxFit.cover,
+        color: Colors.white,
       ),
     );
   }
@@ -191,12 +193,12 @@ class HomeMenuCard extends StatelessWidget {
       },
       child: Container(
         padding: const EdgeInsets.all(5),
-        color: Color.fromARGB(255, 63, 71, 226),
+        color: const Color.fromARGB(240, 102, 108, 230),
         // decoration: const BoxDecoration(color: Colors.indigo, boxShadow: [
         //   BoxShadow(color: Colors.grey, blurRadius: 2.0, spreadRadius: 0.4)
         // ]),
         child: SizedBox(
-          height: 120,
+          height: 115,
           width: 160,
           child: Column(
             children: [
@@ -204,11 +206,15 @@ class HomeMenuCard extends StatelessWidget {
                 child: Image.asset(
                   'assets/images/$imageName',
                   // fit: BoxFit.scaleDown,
-                  height: 100,
-                  width: 100,
+                  height: 80,
+                  width: 80,
                 ),
               ),
-              Text(title)
+              Text(
+                title,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 20, color: Colors.white),
+              )
             ],
           ),
         ),

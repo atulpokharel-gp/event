@@ -20,32 +20,30 @@ class Contact extends StatelessWidget {
       ])),
       // ignore: avoid_unnecessary_containers
       body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/bg-white.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: Column(
           children: [
-            Column(
-              children: [
-                Column(
-                  children: [
-                    SizedBox(
-                        // ignore: sort_child_properties_last
-                        height: MediaQuery.of(context).size.height * 0.25,
-                        width: double.infinity,
-                        child: const Image(
-                          image: AssetImage('assets/images/message.jpg'),
-                        )),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.25,
-                      width: double.infinity,
-                      child: const MapSample(),
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.8,
-                      width: double.infinity,
-                      child: const Contactus(),
-                    )
-                  ],
-                ),
-              ],
+            SizedBox(
+                // ignore: sort_child_properties_last
+                height: MediaQuery.of(context).size.height * 0.20,
+                width: double.infinity,
+                child: const Image(
+                  image: AssetImage('assets/images/message.jpg'),
+                )),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.15,
+              width: double.infinity,
+              child: const MapSample(),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.40,
+              width: double.infinity,
+              child: const Contactus(),
             )
           ],
         ),
