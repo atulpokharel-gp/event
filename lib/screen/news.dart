@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../data/NewsData.dart';
+import '../data/news_data.dart';
 // ignore: unused_import
 import '../widgets/news_container.dart';
 import '../widgets/newslist_container.dart';

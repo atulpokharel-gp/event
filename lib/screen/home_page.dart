@@ -4,7 +4,7 @@ import 'package:event/screen/padhakrit.dart';
 import 'package:event/screen/project.dart';
 import 'package:event/screen/profile.dart';
 import 'package:event/screen/news.dart';
-import 'package:event/screen/LocalTax.dart';
+import 'package:event/screen/local_tax.dart';
 import 'package:event/screen/contact.dart';
 import 'package:flutter/material.dart';
 

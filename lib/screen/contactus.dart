@@ -49,103 +49,114 @@ class _ContactusState extends State<Contactus> {
     return AnimatedPadding(
       duration: kThemeAnimationDuration,
       padding: mediaQueryData.viewInsets,
-      child: Form(
-        key: _formKey,
-        child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextFormField(
-              decoration: const InputDecoration(
-                border: UnderlineInputBorder(),
-                icon: Icon(Icons.subject_rounded),
-                hintText: 'नाम',
-                labelText: 'नाम',
-              ),
-              // The validator receives the text that the user has entered.
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter Name';
-                }
-                return null;
-              },
+      child: Column(
+        children: [
+          const Text(
+            "contact",
+            style: TextStyle(
+              color: Colors.red,
+              fontSize: 20,
             ),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: Icon(Icons.subject_rounded),
-                hintText: 'ठेगाना',
-                labelText: 'ठेगाना',
-              ),
-              // The validator receives the text that the user has entered.
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter email';
-                }
-                return null;
-              },
+          ),
+          Form(
+            key: _formKey,
+            child: Column(
+              // crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextFormField(
+                  decoration: const InputDecoration(
+                    border: UnderlineInputBorder(),
+                    icon: Icon(Icons.subject_rounded),
+                    hintText: 'नाम',
+                    labelText: 'नाम',
+                  ),
+                  // The validator receives the text that the user has entered.
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter Name';
+                    }
+                    return null;
+                  },
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    icon: Icon(Icons.subject_rounded),
+                    hintText: 'ठेगाना',
+                    labelText: 'ठेगाना',
+                  ),
+                  // The validator receives the text that the user has entered.
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter email';
+                    }
+                    return null;
+                  },
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    icon: Icon(Icons.subject_rounded),
+                    hintText: 'इमेल',
+                    labelText: 'इमेल',
+                  ),
+                  // The validator receives the text that the user has entered.
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter Message';
+                    }
+                    return null;
+                  },
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    icon: Icon(Icons.subject_rounded),
+                    hintText: 'फोन',
+                    labelText: 'फोन',
+                  ),
+                  // The validator receives the text that the user has entered.
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter Message';
+                    }
+                    return null;
+                  },
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    icon: Icon(Icons.subject_rounded),
+                    hintText: 'सन्देश',
+                    labelText: 'सन्देश',
+                  ),
+                  // The validator receives the text that the user has entered.
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter Message';
+                    }
+                    return null;
+                  },
+                ),
+                // Padding(
+                //   padding: const EdgeInsets.symmetric(vertical: 1.0),
+                //   child:
+                ElevatedButton(
+                  onPressed: () {
+                    // Validate returns true if the form is valid, or false otherwise.
+                    if (_formKey.currentState!.validate()) {
+                      sentEmail();
+                      // If the form is valid, display a snackbar. In the real world,
+                      // you'd often call a server or save the information in a database.
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Processing Data')),
+                      );
+                    }
+                  },
+                  child: const Text('पठाउनुस '),
+                ),
+                // ),
+              ],
             ),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: Icon(Icons.subject_rounded),
-                hintText: 'इमेल',
-                labelText: 'इमेल',
-              ),
-              // The validator receives the text that the user has entered.
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter Message';
-                }
-                return null;
-              },
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: Icon(Icons.subject_rounded),
-                hintText: 'फोन',
-                labelText: 'फोन',
-              ),
-              // The validator receives the text that the user has entered.
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter Message';
-                }
-                return null;
-              },
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: Icon(Icons.subject_rounded),
-                hintText: 'सन्देश',
-                labelText: 'सन्देश',
-              ),
-              // The validator receives the text that the user has entered.
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter Message';
-                }
-                return null;
-              },
-            ),
-            // Padding(
-            //   padding: const EdgeInsets.symmetric(vertical: 1.0),
-            //   child:
-            ElevatedButton(
-              onPressed: () {
-                // Validate returns true if the form is valid, or false otherwise.
-                if (_formKey.currentState!.validate()) {
-                  sentEmail();
-                  // If the form is valid, display a snackbar. In the real world,
-                  // you'd often call a server or save the information in a database.
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Processing Data')),
-                  );
-                }
-              },
-              child: const Text('पठाउनुस '),
-            ),
-            // ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
