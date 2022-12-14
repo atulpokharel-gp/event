@@ -1,6 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ishanitechnology.com.event">
+    <uses-permission android:name="android.permission.INTERNET" />
+
    <application
+        android:allowBackup="true"
         android:label="event"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">

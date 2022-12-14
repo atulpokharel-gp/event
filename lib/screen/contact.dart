@@ -1,5 +1,5 @@
-import 'package:event/screen/map_sample.dart';
-import 'package:event/screen/contactus.dart';
+import 'package:event/Model/map_sample.dart';
+import 'package:event/Model/contactus.dart';
 import 'package:flutter/material.dart';
 
 class Contact extends StatelessWidget {
