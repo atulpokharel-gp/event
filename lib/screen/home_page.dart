@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
                 children: (const [
                   Center(
                     child: Image(
-                      image: AssetImage('assets/images/logo.png'),
+                      image: AssetImage('assets/images/logocroped.jpg'),
                       width: 200,
                       height: 200,
                     ),
@@ -114,9 +114,9 @@ class HomePage extends StatelessWidget {
 
   Text foter() {
     return const Text(
-      "2022 @ishanitechnology ",
+      "2022 © Lalitpur Metrolitan city ward 06",
       textAlign: TextAlign.center,
-      style: TextStyle(fontSize: 20, color: Colors.white),
+      style: TextStyle(fontSize: 13, color: Colors.white),
     );
   }
 }
@@ -198,22 +198,25 @@ class HomeMenuCard extends StatelessWidget {
         //   BoxShadow(color: Colors.grey, blurRadius: 2.0, spreadRadius: 0.4)
         // ]),
         child: SizedBox(
-          height: 115,
-          width: 160,
+          height: MediaQuery.of(context).size.height * 0.15,
+          width: MediaQuery.of(context).size.width * 0.40,
           child: Column(
             children: [
               Center(
                 child: Image.asset(
                   'assets/images/$imageName',
                   // fit: BoxFit.scaleDown,
-                  height: 80,
-                  width: 80,
+                  height: MediaQuery.of(context).size.height * 0.10,
+                  width: MediaQuery.of(context).size.width * 0.30,
                 ),
               ),
               Text(
                 title,
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 20, color: Colors.white),
+                style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               )
             ],
           ),
