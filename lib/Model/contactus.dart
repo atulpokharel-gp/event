@@ -67,7 +67,6 @@ class _ContactusState extends State<Contactus> {
             child: Form(
               key: _formKey,
               child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   TextFormField(

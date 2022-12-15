@@ -114,7 +114,7 @@ class HomePage extends StatelessWidget {
 
   Text foter() {
     return const Text(
-      "2022 © Lalitpur Metrolitan city ward 06",
+      "2022 © ललितपुर महानगरपालिका नं. वडा  ६ ",
       textAlign: TextAlign.center,
       style: TextStyle(fontSize: 13, color: Colors.white),
     );
@@ -194,11 +194,8 @@ class HomeMenuCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(5),
         color: const Color.fromARGB(240, 102, 108, 230),
-        // decoration: const BoxDecoration(color: Colors.indigo, boxShadow: [
-        //   BoxShadow(color: Colors.grey, blurRadius: 2.0, spreadRadius: 0.4)
-        // ]),
         child: SizedBox(
-          height: MediaQuery.of(context).size.height * 0.15,
+          height: MediaQuery.of(context).size.height * 0.14,
           width: MediaQuery.of(context).size.width * 0.40,
           child: Column(
             children: [

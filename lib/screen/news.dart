@@ -14,13 +14,21 @@ class NewsScreen extends StatelessWidget {
           title: const Text('News'),
           centerTitle: true,
         ),
-        body: ListView.builder(
-            itemCount: mydata.length,
-            itemBuilder: (context, index) {
-              return NewsListContainer(
-                imageurl: mydata[index]['image'],
-                title: mydata[index]['title'],
-              );
-            }));
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/bg-white.png"),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: ListView.builder(
+              itemCount: mydata.length,
+              itemBuilder: (context, index) {
+                return NewsListContainer(
+                  imageurl: mydata[index]['image'],
+                  title: mydata[index]['title'],
+                );
+              }),
+        ));
   }
 }

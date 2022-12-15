@@ -44,7 +44,10 @@ dependencies:
   webview_flutter: ^3.0.4
   syncfusion_flutter_pdf: ^20.3.60
   syncfusion_flutter_pdfviewer: ^20.3.59
- 
+
+  another_flutter_splash_screen: ^1.0.2
+  
+
   
 
 dev_dependencies:
@@ -100,3 +103,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+# flutter_native_splash:
+#   # image: assets/images/01c.png
+#   background_image: assets/images/01c.png
+#   # color: "#5c5ae9"

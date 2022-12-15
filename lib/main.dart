@@ -1,5 +1,6 @@
 import 'package:event/screen/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,33 +30,29 @@ class _RootPageState extends State<RootPage> {
   int currentPage = 0;
   @override
   Widget build(BuildContext context) {
-    return const HomePage();
-    // return Scaffold(
-    //   appBar: AppBar(),
-    //   // appBar: AppBar(
-    //   //     title: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-    //   //   Center(
-    //   //     child: Image.asset(
-    //   //       'assets/images/logo.png',
-    //   //       height: 100,
-    //   //     ),
-    //   //   ),
-    //   // ])),
-    //   body: const HomePage(),
+    return FlutterSplashScreen.fadeIn(
+      backgroundColor: const Color.fromARGB(240, 102, 108, 230),
+      onInit: () {
+        debugPrint("On Init");
+      },
+      onEnd: () {
+        debugPrint("On End");
+      },
+      animationCurve: Curves.easeIn,
+      fadeInChildWidget: SizedBox(
+        child: Image.asset("assets/images/01c.jpg"),
+      ),
+      onFadeInEnd: () => debugPrint("On Fade In End"),
+      nextScreen: const HomePage(),
+    );
 
-    //   // bottomNavigationBar: NavigationBar(
-    //   //   backgroundColor: Colors.blueAccent,
-    //   //   destinations: const [
-    //   //     NavigationDestination(icon: Icon(Icons.home), label: "Home"),
-    //   //     NavigationDestination(icon: Icon(Icons.house), label: "Profile"),
-    //   //   ],
-    //   //   onDestinationSelected: (int index) {
-    //   //     setState(() {
-    //   //       currentPage = index;
-    //   //     });
-    //   //   },
-    //   //   selectedIndex: currentPage,
-    //   // ),
+    // EasySplashScreen(
+    //   backgroundImage: const AssetImage('assets/images/bg.png'),
+    //   showLoader: true,
+    //   loadingText: const Text("Loading..."),
+    //   navigator: const HomePage(),
+    //   durationInSeconds: 8,
+    //   logo: Image.asset('assets/images/logo.png'),
     // );
   }
 }

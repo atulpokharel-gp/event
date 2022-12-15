@@ -29,14 +29,17 @@ class MapSampleState extends State<MapSample> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GoogleMap(
-        mapType: MapType.hybrid,
-        markers: {_kGooglePlexMarker},
-        initialCameraPosition: _kGooglePlex,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
-        },
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Scaffold(
+        body: GoogleMap(
+          mapType: MapType.hybrid,
+          markers: {_kGooglePlexMarker},
+          initialCameraPosition: _kGooglePlex,
+          onMapCreated: (GoogleMapController controller) {
+            _controller.complete(controller);
+          },
+        ),
       ),
     );
   }

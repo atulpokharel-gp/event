@@ -13,9 +13,17 @@ class Profile extends StatelessWidget {
       appBar: AppBar(
         title: const Text("प्रोफाइल"),
       ),
-      body: WebView(
-        initialUrl: url,
-        javascriptMode: JavascriptMode.unrestricted,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/bg-white.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: WebView(
+          initialUrl: url,
+          javascriptMode: JavascriptMode.unrestricted,
+        ),
       ),
     );
   }
