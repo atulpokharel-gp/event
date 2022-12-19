@@ -31,7 +31,7 @@ class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
     return FlutterSplashScreen.fadeIn(
-      backgroundColor: const Color.fromARGB(240, 102, 108, 230),
+      backgroundColor: Colors.white,
       onInit: () {
         debugPrint("On Init");
       },
@@ -40,7 +40,7 @@ class _RootPageState extends State<RootPage> {
       },
       animationCurve: Curves.easeIn,
       fadeInChildWidget: SizedBox(
-        child: Image.asset("assets/images/01c.jpg"),
+        child: Image.asset("assets/images/loading-screen-crop.jpg"),
       ),
       onFadeInEnd: () => debugPrint("On Fade In End"),
       nextScreen: const HomePage(),

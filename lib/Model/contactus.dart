@@ -59,7 +59,9 @@ class _ContactusState extends State<Contactus> {
               textAlign: TextAlign.left,
               "गुनसो",
               style: TextStyle(
-                  color: Colors.red, fontSize: 30, fontWeight: FontWeight.bold),
+                  color: Color.fromARGB(255, 166, 63, 56),
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
             ),
           ),
           Padding(

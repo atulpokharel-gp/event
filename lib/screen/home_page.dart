@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_const, avoid_unnecessary_containers
+
 import 'package:event/screen/sampada.dart';
 import 'package:event/screen/grihapusti.dart';
 import 'package:event/screen/padhakrit.dart';
@@ -20,91 +22,127 @@ class HomePage extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/bg.png'),
+            image: AssetImage('assets/images/bg-white.png'),
             fit: BoxFit.cover,
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
+        child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: (const [
-                  Center(
-                    child: Image(
-                      image: AssetImage('assets/images/logocroped.jpg'),
-                      width: 200,
-                      height: 200,
+              Container(
+                color: const Color.fromARGB(255, 238, 239, 239),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/main-logo.png"),
+                        ),
+                      ),
+                      height: MediaQuery.of(context).size.height * 0.20,
+                      width: MediaQuery.of(context).size.width * 0.50,
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SingleChildScrollView(
+                  child: Container(
+                    child: SingleChildScrollView(
+                      child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: (const [
+                                  HomeMenuCard(
+                                    title: "गृहपृष्ठ",
+                                    imageName: 'home.png',
+                                    index: 0,
+                                  ),
+                                  HomeMenuCard(
+                                    title: "सम्पदा",
+                                    imageName: "sampada.png",
+                                    index: 1,
+                                  ),
+                                ]),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: const [
+                                  HomeMenuCard(
+                                    title: "पदाधिकारी",
+                                    imageName: "team.png",
+                                    index: 2,
+                                  ),
+                                  HomeMenuCard(
+                                    title: "सुचना र समाचार",
+                                    imageName: "news.png",
+                                    index: 3,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: const [
+                                  HomeMenuCard(
+                                    title: "बार्षिक योजना",
+                                    imageName: "project.png",
+                                    index: 4,
+                                  ),
+                                  HomeMenuCard(
+                                    title: "स्थानिय कर",
+                                    imageName: "tax.png",
+                                    index: 5,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: const [
+                                  HomeMenuCard(
+                                    title: "प्रोफाइल",
+                                    imageName: "profile.png",
+                                    index: 6,
+                                  ),
+                                  HomeMenuCard(
+                                    title: "सम्पर्क",
+                                    imageName: "contact.png",
+                                    index: 7,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [foter()],
+                              ),
+                            ),
+                          ]),
                     ),
-                  )
-                ]),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: (const [
-                  HomeMenuCard(
-                    title: "गृहपृष्ठ",
-                    imageName: 'home.png',
-                    index: 0,
                   ),
-                  HomeMenuCard(
-                    title: "सम्पदा",
-                    imageName: "sampada.png",
-                    index: 1,
-                  ),
-                ]),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  HomeMenuCard(
-                    title: "पदाधिकारी",
-                    imageName: "team.png",
-                    index: 2,
-                  ),
-                  HomeMenuCard(
-                    title: "सुचना र समाचार",
-                    imageName: "news.png",
-                    index: 3,
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  HomeMenuCard(
-                    title: "बार्षिक योजना",
-                    imageName: "project.png",
-                    index: 4,
-                  ),
-                  HomeMenuCard(
-                    title: "स्थानिय कर",
-                    imageName: "tax.png",
-                    index: 5,
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  HomeMenuCard(
-                    title: "प्रोफाइल",
-                    imageName: "profile.png",
-                    index: 6,
-                  ),
-                  HomeMenuCard(
-                    title: "सम्पर्क",
-                    imageName: "contact.png",
-                    index: 7,
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [foter()],
-              ),
+                ),
+              )
             ],
           ),
         ),
@@ -114,9 +152,9 @@ class HomePage extends StatelessWidget {
 
   Text foter() {
     return const Text(
-      "2022 © ललितपुर महानगरपालिका नं. वडा  ६ ",
+      "2022 © ललितपुर महानगरपालिका नं. वडा  ६ | Developed by : DigiSoft Developer",
       textAlign: TextAlign.center,
-      style: TextStyle(fontSize: 13, color: Colors.white),
+      style: TextStyle(fontSize: 10, color: Colors.black),
     );
   }
 }
@@ -192,11 +230,11 @@ class HomeMenuCard extends StatelessWidget {
         }
       },
       child: Container(
-        padding: const EdgeInsets.all(5),
+        padding: const EdgeInsets.all(4),
         color: const Color.fromARGB(240, 102, 108, 230),
         child: SizedBox(
-          height: MediaQuery.of(context).size.height * 0.14,
-          width: MediaQuery.of(context).size.width * 0.40,
+          height: MediaQuery.of(context).size.height * 0.16,
+          width: MediaQuery.of(context).size.width * 0.41,
           child: Column(
             children: [
               Center(
@@ -204,7 +242,7 @@ class HomeMenuCard extends StatelessWidget {
                   'assets/images/$imageName',
                   // fit: BoxFit.scaleDown,
                   height: MediaQuery.of(context).size.height * 0.10,
-                  width: MediaQuery.of(context).size.width * 0.30,
+                  width: MediaQuery.of(context).size.width * 0.20,
                 ),
               ),
               Text(
