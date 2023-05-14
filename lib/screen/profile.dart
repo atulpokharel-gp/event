@@ -1,30 +1,32 @@
-import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+// import 'package:flutter/material.dart';
+// import 'package:webview_flutter/webview_flutter.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({super.key});
+// import 'app_bar.dart';
 
-  final String url =
-      'https://ward06.lalitpurmun.gov.np/%e0%a4%b9%e0%a4%be%e0%a4%ae%e0%a5%8d%e0%a4%b0%e0%a5%8b-%e0%a4%ac%e0%a4%be%e0%a4%b0%e0%a5%87%e0%a4%ae%e0%a4%be/';
+// class Profile extends StatelessWidget {
+//   const Profile({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("प्रोफाइल"),
-      ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/bg-white.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: WebView(
-          initialUrl: url,
-          javascriptMode: JavascriptMode.unrestricted,
-        ),
-      ),
-    );
-  }
-}
+//   final String url = 'https://ward06.lalitpurmun.gov.np/apps/apps-about/';
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: const CustomAppBar(),
+//       body: Container(
+//         decoration: const BoxDecoration(
+//           image: DecorationImage(
+//             image: AssetImage("assets/images/bg-white.png"),
+//             fit: BoxFit.cover,
+//           ),
+//         ),
+//         child: Padding(
+//           padding: const EdgeInsets.all(8.0),
+//           child: WebView(
+//             initialUrl: url,
+//             javascriptMode: JavascriptMode.unrestricted,
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }

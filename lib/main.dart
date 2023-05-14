@@ -1,4 +1,4 @@
-import 'package:event/screen/home_page.dart';
+import 'package:event/screen/grihapusti.dart';
 import 'package:flutter/material.dart';
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 
@@ -43,7 +43,7 @@ class _RootPageState extends State<RootPage> {
         child: Image.asset("assets/images/loading-screen-crop.jpg"),
       ),
       onFadeInEnd: () => debugPrint("On Fade In End"),
-      nextScreen: const HomePage(),
+      nextScreen: const Ghripusti(),
     );
 
     // EasySplashScreen(
